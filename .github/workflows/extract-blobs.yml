@@ -6,35 +6,35 @@ on:
       FIRMWARE_DUMP_REPO:
         description: 'Firmware Dump Repository URL'
         required: true
-        default: 'https://gitlab.com/kelexine/tecno-spark-8c-kg5j-rom-dump.git'
+        default: 'https://github.com/phhgsi/vendor_oneplus_oscar.git'
       FIRMWARE_DUMP_BRANCH:
         description: 'Firmware Dump Repository Branch'
         required: true
-        default: 'main'
+        default: 'fourteen'
       DEVICE_TREE_REPO:
         description: 'Device Tree Repository URL'
         required: true
-        default: 'https://github.com/kelexine/android_device_tecno_KG5j'
+        default: 'https://github.com/phhgsi/oplus.git'
       DEVICE_TREE_BRANCH:
         description: 'Device Tree Repository Branch'
         required: true
-        default: 'android-11'
+        default: 'main'
       DEVICE_CODENAME:
         description: 'Device Codename'
         required: true
-        default: 'KG5j'
+        default: 'oscar'
       DEVICE_VENDORNAME:
         description: 'Device Vendor Name'
         required: true
-        default: 'tecno'
+        default: 'oneplus'
       USER_NAME:
         description: 'Name in Github Account'
         required: true
-        default: 'kelexine'
+        default: 'phhgsi'
       USER_EMAIL:
         description: 'E-mail in Github Account'
         required: true
-        default: 'frankiekelechi@gmail.com'
+        default: 'ajay24ce008@satiengg.in'
 
 jobs:
   build:
@@ -100,7 +100,7 @@ jobs:
         cd workspace
         chmod a+x android/device/${{ env.DVN }}/${{ env.DCN }}/setup-makefiles.sh
         cd android/device/${{ env.DVN }}/${{ env.DCN }}/
-        bash extract-files.sh ${GITHUB_WORKSPACE}/workspace/firmware-dump/
+        bash extract-files.sh ${GITHUB_WORKSPACE}/workspace/firmware-dump/proprietary
         echo "Done extracting and making files."
         echo "Pushing as repository now."
         
