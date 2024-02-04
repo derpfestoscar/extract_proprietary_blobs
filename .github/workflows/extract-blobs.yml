@@ -99,7 +99,7 @@ jobs:
         cd workspace
         chmod a+x android/device/${{ env.DVN }}/${{ env.DCN }}/setup-makefiles.sh
         cd android/device/${{ env.DVN }}/${{ env.DCN }}/
-        bash extract-files.sh ${GITHUB_WORKSPACE}/workspace/firmware-dump/proprietary
+        bash extract-files.sh ${GITHUB_WORKSPACE}/workspace/firmware-dump
         echo "Done extracting and making files."
         echo "Pushing as repository now."
         
