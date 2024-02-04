@@ -80,6 +80,7 @@ jobs:
       run: |
         mkdir workspace && cd workspace
         git clone --depth=1 ${{ env.FDR }} -b ${{ env.FDB }} ./firmware-dump
+        git clone https://github.com/phhgsi/oplus_libx.git ./firmware-dump/aj
 
     - name: Clone Device Tree
       run: |
