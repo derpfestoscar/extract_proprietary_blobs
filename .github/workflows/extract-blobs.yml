@@ -79,7 +79,7 @@ jobs:
     - name: Clone Firmware Dump
       run: |
         mkdir workspace && cd workspace
-        git clone --depth=1 ${{ env.FDR }} -b ${{ env.FDB }} ./firmware-dump/proprietary
+        git clone --depth=1 ${{ env.FDR }} -b ${{ env.FDB }} ./firmware-dump
 
     - name: Clone Device Tree
       run: |
@@ -99,7 +99,7 @@ jobs:
         cd workspace
         chmod a+x android/device/${{ env.DVN }}/${{ env.DCN }}/setup-makefiles.sh
         cd android/device/${{ env.DVN }}/${{ env.DCN }}/
-        bash extract-files.sh ${GITHUB_WORKSPACE}/workspace/firmware-dump
+        bash extract-files.sh ${GITHUB_WORKSPACE}/workspace/firmware-dump/proprietary
         echo "Done extracting and making files."
         echo "Pushing as repository now."
         
