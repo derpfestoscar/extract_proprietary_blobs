@@ -79,8 +79,7 @@ jobs:
     - name: Clone Firmware Dump
       run: |
         mkdir workspace && cd workspace
-        git clone --depth=1 ${{ env.FDR }} -b ${{ env.FDB }} ./firmware-dump
-        git clone https://github.com/phhgsi/oplus_libx.git ./firmware-dump/aj
+        git clone --depth=1 ${{ env.FDR }} -b ${{ env.FDB }} ./firmware-dump/proprietary
 
     - name: Clone Device Tree
       run: |
